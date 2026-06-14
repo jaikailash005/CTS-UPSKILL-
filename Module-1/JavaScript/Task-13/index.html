@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Local Community Event Portal - Debugging & Testing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+<ul class="navMenu">
+<li><a href="#home">Home</a></li>
+<li><a href="#eventTimers">Clock &amp; Timers</a></li>
+<li><a href="#events">Events</a></li>
+<li><a href="#bulletin">Bulletin</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#register">Register</a></li>
+<li><a href="#ajaxSection">AJAX Submit</a></li>
+<li><a href="#debugSection">Debug Panel</a></li>
+<li><a href="#preferences">Preferences</a></li>
+<li><a href="#location">Nearby Events</a></li>
+<li><a href="#contact">Contact</a></li>
+<li><a href="help.html" target="_blank">Help</a></li>
+</ul>
+</nav>
+
+<main>
+<div id="mainHeader">
+<h1 style="color:red;">Welcome to Local Community Event Portal</h1>
+<p>Register today and get <span style="color:red;font-weight:bold;">50% OFF</span> on premium cultural events.</p>
+<p class="highlight">Special community awareness programs available this weekend.</p>
+</div>
+<section id="eventTimers" class="eventCard">
+<h2>Live Clock &amp; Timers</h2>
+<div class="timer-box">
+    <div class="clock-display">
+        <h3 id="clock">00:00:00</h3>
+        <p>Live Event System Time</p>
+    </div>
+    <div class="timer-actions">
+        <button id="timerAlertBtn">Show Alert After 3 Seconds</button>
+        <p id="message"></p>
+    </div>
+</div>
+</section>
+
+<section id="home" class="eventCard">
+<h2>About Portal</h2>
+<p>The city council portal helps residents participate in local activities and services.</p>
+</section>
+
+<section id="boxModelDemo" class="eventCard">
+<h2>Box Model Demonstration</h2>
+<div class="boxExample">This card demonstrates margin, padding and border properties.</div>
+<p class="hiddenText">This text uses visibility:hidden.</p>
+<p class="removedText">This text uses display:none.</p>
+</section>
+
+<section id="bulletin" class="eventCard">
+<h2>Community Bulletin</h2>
+<div class="newsColumns">
+The Local Community Event Portal supports residents through cultural festivals, educational awareness programs, food camps, sports meets, health initiatives, and city-wide activities. Residents are encouraged to participate in upcoming events to strengthen community engagement and improve social interaction.
+The annual Music Festival features local artists and performers, creating opportunities for talent development and cultural appreciation. Food camps provide free nutritional guidance and healthy meal awareness for families and senior citizens.
+The City Marathon promotes fitness, teamwork, and healthy lifestyles among residents of all age groups. Sports meets encourage youth participation and help build leadership and collaboration skills.
+Awareness programs focus on environmental protection, waste management, road safety, digital literacy, and public health. These initiatives aim to educate citizens and create a more responsible and informed community.
+</div>
+</section>
+
+<section id="events" class="eventCard">
+<h2>Upcoming Events</h2>
+<h3>Featured Community Programs</h3>
+<p>Music Festival | Marathon | Food Camp | Awareness Program</p>
+<ul class="eventList">
+<li>Music Festival</li>
+<li>Food Camp</li>
+<li>City Marathon</li>
+<li>Dance Program</li>
+<li>Awareness Program</li>
+<li>Sports Meet</li>
+</ul>
+</section>
+
+<section id="eventListSection" class="eventCard">
+<h2>Available Events</h2>
+<div id="eventList"></div>
+<button id="registerEventBtn">Register User</button>
+</section>
+
+<section id="eventManagement" class="eventCard">
+<h2>Event Management</h2>
+<button id="addEventBtn">Add Event</button>
+<button id="registerUserBtn">Register User</button>
+<button id="filterEventBtn">Filter Music Events</button>
+<button id="objectEntriesBtn">Show Event Details</button>
+<button id="mapEventBtn">Show Formatted Events</button>
+<button id="domEventBtn">Create Event Cards</button>
+<div id="managementOutput"></div>
+<div id="domContainer"></div>
+</section>
+<section id="asyncEventsSection" class="eventCard">
+<h2>Async Event Mock API Fetch</h2>
+<div class="buttonGroup">
+    <button id="fetchThenCatchBtn">Fetch via .then() / .catch()</button>
+    <button id="fetchAsyncAwaitBtn">Fetch via Async / Await</button>
+</div>
+<div id="asyncSpinner" class="spinner-container hidden">
+    <div class="loading-spinner"></div>
+    <p>Retrieving events from mock server...</p>
+</div>
+<div id="asyncOutput"></div>
+</section>
+
+<section id="filterSearchSection" class="eventCard">
+<h2>Filter &amp; Search Events</h2>
+<div class="filterSearchControls">
+    <div class="controlGroup">
+        <label for="categoryFilter">Filter by Category:</label>
+        <select id="categoryFilter">
+            <option value="All">All Events</option>
+            <option value="Music">Music</option>
+            <option value="Food">Food</option>
+            <option value="Sports">Sports</option>
+        </select>
+    </div>
+    <div class="controlGroup">
+        <label for="searchEvent">Quick Search:</label>
+        <input type="text" id="searchEvent" placeholder="Type event name..."/>
+    </div>
+</div>
+<div id="eventSearchResult"></div>
+</section>
+
+<section id="eventInfo" class="eventCard">
+<h2>Event Information</h2>
+<p id="eventDetails"></p>
+<p id="seatCount"></p>
+<button id="registerSeatBtn">Register for Event</button>
+</section>
+
+<section id="gallery" class="eventCard">
+<h2>Community Event Gallery</h2>
+<table class="eventTable">
+<tr>
+<th>Event Image</th><th>Event Name</th><th>Category</th>
+</tr>
+<tr><td><img src="images/music.jpg" alt="Music Festival" class="galleryImage"></td><td>Music Festival</td><td>Cultural</td></tr>
+<tr><td><img src="images/food.jpg" alt="Food Camp" class="galleryImage"></td><td>Food Camp</td><td>Community Service</td></tr>
+<tr><td><img src="images/marathon.jpg" alt="City Marathon" class="galleryImage"></td><td>City Marathon</td><td>Sports</td></tr>
+<tr><td><img src="images/dance.jpg" alt="Dance Program" class="galleryImage"></td><td>Dance Program</td><td>Cultural</td></tr>
+<tr><td><img src="images/awareness.jpg" alt="Awareness Program" class="galleryImage"></td><td>Awareness Program</td><td>Education</td></tr>
+<tr><td><img src="images/sports.jpg" alt="Sports Meet" class="galleryImage"></td><td>Sports Meet</td><td>Sports</td></tr>
+</table>
+</section>
+<section id="register" class="eventCard">
+<h2>Event Registration Form</h2>
+<div id="registrationSuccess" class="form-success hidden">
+    <span>&#10003;</span>
+    <p id="successMessage">Registration Successful!</p>
+</div>
+<form id="registrationForm" novalidate>
+    <div class="field-wrapper">
+        <label for="regName">Full Name</label>
+        <input type="text" id="regName" name="fullname" class="formField" placeholder="Enter your full name">
+        <span class="inline-error" id="nameError"></span>
+    </div>
+    <div class="field-wrapper">
+        <label for="regEmail">Email Address</label>
+        <input type="email" id="regEmail" name="email" class="formField" placeholder="Enter your email address">
+        <span class="inline-error" id="emailError"></span>
+    </div>
+    <div class="field-wrapper">
+        <label for="regEvent">Select Event</label>
+        <select id="regEvent" name="eventType" class="formField">
+            <option value="">-- Select Event Type --</option>
+            <option value="Music Festival">Music Festival</option>
+            <option value="Food Camp">Food Camp</option>
+            <option value="City Marathon">City Marathon</option>
+            <option value="Dance Program">Dance Program</option>
+            <option value="Awareness Program">Awareness Program</option>
+            <option value="Sports Meet">Sports Meet</option>
+        </select>
+        <span class="inline-error" id="eventError"></span>
+    </div>
+    <div class="field-wrapper">
+        <label for="regFeedback">Feedback / Message</label>
+        <textarea id="regFeedback" name="feedback" class="formField" rows="4" placeholder="Enter your feedback or message"></textarea>
+        <span class="inline-error" id="feedbackError"></span>
+    </div>
+    <button type="submit" id="registerFormBtn">Register Now</button>
+</form>
+</section>
+<section id="ajaxSection" class="eventCard">
+<h2>AJAX &amp; Fetch API — Mock POST Submission</h2>
+<p>Submits registration data to a <strong>simulated backend API</strong> using <code>fetch()</code> with <code>setTimeout()</code> to mimic network latency.</p>
+<div id="postSpinner" class="spinner-container hidden">
+    <div class="loading-spinner"></div>
+    <p id="postSpinnerText">Sending data to server...</p>
+</div>
+<div id="postResult"></div>
+<div class="buttonGroup ajax-btn-group">
+    <button id="postThenCatchBtn" class="btn-ajax-then">POST via .then() / .catch()</button>
+    <button id="postAsyncAwaitBtn" class="btn-ajax-async">POST via Async / Await</button>
+</div>
+<div id="ajaxPreviewWrapper" class="ajax-preview-wrapper hidden">
+    <div class="ajax-preview-box">
+        <h3>&#128228; Request Payload</h3>
+        <pre id="requestPreview"></pre>
+    </div>
+    <div class="ajax-preview-box">
+        <h3>&#128229; Server Response</h3>
+        <pre id="responsePreview"></pre>
+    </div>
+</div>
+<div style="margin-top:15px;">
+    <button id="postFailBtn" class="btn-fail">Simulate Server Error (500)</button>
+</div>
+</section>
+<section id="debugSection" class="eventCard">
+<h2>&#128030; Debugging &amp; Testing — Live Debug Panel</h2>
+<p>
+    This panel mirrors all <code>console.log</code>, <code>console.warn</code>,
+    <code>console.error</code>, <code>console.group</code>, and
+    <code>console.table</code> calls made during form submission and fetch operations.
+    Open <strong>Chrome DevTools → Console</strong> (F12) to see the same output with
+    full interactivity, breakpoints, and call stacks.
+</p>
+<div class="debug-controls">
+    <div class="debug-group">
+        <h3>&#128270; Inspect Variables</h3>
+        <button id="logEventsTableBtn">console.table(events)</button>
+        <button id="logEventObjectBtn">console.log(Event Object)</button>
+        <button id="logSeatCountBtn">Log Seat Counts</button>
+    </div>
+    <div class="debug-group">
+        <h3>&#9888;&#65039; Console Warnings &amp; Errors</h3>
+        <button id="triggerWarnBtn" class="btn-warn">Trigger console.warn()</button>
+        <button id="triggerErrorBtn" class="btn-error-trigger">Trigger console.error()</button>
+    </div>
+    <div class="debug-group">
+        <h3>&#128196; Simulate Silent Bug &amp; Fix</h3>
+        <button id="triggerBugBtn" class="btn-warn">Run Buggy Registration</button>
+        <button id="fixBugBtn" class="btn-fix">Run Fixed Registration</button>
+    </div>
+    <div class="debug-group">
+        <h3>&#128240; Fetch Payload Inspector</h3>
+        <button id="logFetchPayloadBtn">Log Fetch Payload to Console</button>
+        <button id="clearDebugBtn" class="btn-clear">Clear Debug Panel</button>
+    </div>
+</div>
+<div class="debug-console-wrapper">
+    <div class="debug-console-header">
+        <span>&#128187; On-Screen Debug Console</span>
+        <span class="badge" id="logBadge">0 logs</span>
+    </div>
+    <div id="debugConsole" class="debug-console">
+        <p class="debug-placeholder">Debug output will appear here when you click the buttons above or submit the registration form...</p>
+    </div>
+</div>
+<div class="breakpoint-guide">
+    <h3>&#9679; How to Set Breakpoints in Chrome DevTools (Breakpoint Evidence)</h3>
+    <ol>
+        <li>Press <kbd>F12</kbd> to open DevTools.</li>
+        <li>Click the <strong>Sources</strong> tab.</li>
+        <li>Open <strong>script.js</strong> from the file tree on the left.</li>
+        <li>
+            Set breakpoints on these specific lines:
+            <ul>
+                <li><code>const payload = collectFormPayload();</code> (inside <code>postRegistrationThenCatch</code> and <code>postRegistrationAsyncAwait</code>)</li>
+                <li><code>const response = await mockPostRegistration(payload);</code> (inside <code>postRegistrationAsyncAwait</code>)</li>
+            </ul>
+        </li>
+        <li>Click the line number in <strong>script.js</strong> to set a blue breakpoint marker.</li>
+        <li>Submit the form or click the POST buttons — execution will <strong>pause</strong> at your breakpoint.</li>
+        <li>Hover over variables to inspect their live values in the tooltip.</li>
+        <li>Use <kbd>F10</kbd> (Step Over) / <kbd>F11</kbd> (Step Into) to walk through code.</li>
+        <li>Type <code>debugger;</code> directly in script.js to add a programmatic breakpoint.</li>
+    </ol>
+</div>
+<div class="network-guide">
+    <h3>&#127760; How to Inspect the Network Tab</h3>
+    <ol>
+        <li>Open DevTools (<kbd>F12</kbd>) → click the <strong>Network</strong> tab.</li>
+        <li>Click <strong>POST via .then()/.catch()</strong> in the AJAX section above.</li>
+        <li>Watch for the <code>mockPost</code> entry in the Network list — or check XHR/Fetch filters.</li>
+        <li>Click the request row → view <strong>Headers</strong>, <strong>Payload</strong>, <strong>Response</strong>, and <strong>Timing</strong> sub-tabs.</li>
+        <li>The <em>Timing</em> tab shows the 2-second simulated delay from <code>setTimeout()</code>.</li>
+    </ol>
+</div>
+</section>
+<section id="preferences" class="eventCard">
+<h2>User Preferences &amp; Local Storage</h2>
+<div class="preference-form">
+    <div class="form-group">
+        <label for="userName">Enter Your Name:</label>
+        <input type="text" id="userName" class="formField" placeholder="Enter full name">
+    </div>
+    <div class="form-group" style="margin-top:15px;">
+        <label for="preferredEvent">Select Preferred Event:</label>
+        <select id="preferredEvent" class="formField">
+            <option>Music Festival</option>
+            <option>Food Camp</option>
+            <option>City Marathon</option>
+            <option>Dance Program</option>
+            <option>Awareness Program</option>
+            <option>Sports Meet</option>
+        </select>
+    </div>
+    <div class="buttonGroup" style="margin-top:20px;">
+        <button type="button" id="savePrefBtn">Save Preferences</button>
+        <button type="button" id="clearPrefBtn">Clear Preferences</button>
+    </div>
+</div>
+<h3 id="preferenceResult" style="margin-top:20px;color:#1e40af;font-style:normal;font-weight:600;">
+    Stored Preferences Will Appear Here
+</h3>
+</section>
+
+<section id="location" class="eventCard">
+<h2>Find Nearby Events</h2>
+<button type="button" onclick="findLocation()">Find Nearby Events</button>
+<p id="locationResult"></p>
+</section>
+
+<section id="contact" class="eventCard">
+<h2>Contact Us</h2>
+<p>Email: support@cityportal.com</p>
+<p>Phone: +91 9876543210</p>
+</section>
+</main>
+
+<footer>
+<p>&#169; 2026 Local City Council</p>
+<script>
+function findLocation(){
+    if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(showPosition,showError,{enableHighAccuracy:true,timeout:5000,maximumAge:0});
+    } else { document.getElementById("locationResult").innerHTML="Geolocation not supported"; }
+}
+function showPosition(pos){
+    document.getElementById("locationResult").innerHTML=
+        "Latitude: "+pos.coords.latitude+"<br>Longitude: "+pos.coords.longitude+"<br>Nearby community events available in your city.";
+}
+function showError(err){
+    const msgs={[err.PERMISSION_DENIED]:"Location access denied",[err.POSITION_UNAVAILABLE]:"Location unavailable",[err.TIMEOUT]:"Request timeout"};
+    document.getElementById("locationResult").innerHTML=msgs[err.code]||"Unknown error";
+}
+</script>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
