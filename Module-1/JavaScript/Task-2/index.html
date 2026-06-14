@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Local Community Event Portal</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<nav>
+
+<ul class="navMenu">
+<li><a href="#home">Home</a></li>
+<li><a href="#events">Events</a></li>
+<li><a href="#bulletin">Bulletin</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#register">Register</a></li>
+<li><a href="#video">Video</a></li>
+<li><a href="#preferences">Preferences</a></li>
+<li><a href="#location">Nearby Events</a></li>
+<li><a href="#contact">Contact</a></li>
+<li><a href="help.html" target="_blank">Help</a></li>
+</ul>
+</nav>
+
+<main>
+
+<div id="mainHeader">
+
+<h1 style="color:red;">Welcome to Local Community Event Portal</h1>
+
+<p>
+Register today and get
+<span style="color:red;font-weight:bold;">50% OFF</span>
+on premium cultural events.
+</p>
+
+<p class="highlight">
+Special community awareness programs available this weekend.
+</p>
+</div>
+
+<section id="home" class="eventCard">
+
+<h2>About Portal</h2>
+
+<p>
+The city council portal helps residents participate in local activities and services.
+</p>
+</section>
+
+<section id="boxModelDemo" class="eventCard">
+
+<h2>Box Model Demonstration</h2>
+
+<div class="boxExample">
+This card demonstrates margin, padding and border properties.
+</div>
+
+<p class="hiddenText">
+This text uses visibility:hidden.
+</p>
+
+<p class="removedText">
+This text uses display:none.
+</p>
+</section>
+
+<section id="bulletin" class="eventCard">
+
+<h2>Community Bulletin</h2>
+
+<div class="newsColumns">
+
+The Local Community Event Portal supports residents through cultural festivals, educational awareness programs, food camps, sports meets, health initiatives, and city-wide activities. Residents are encouraged to participate in upcoming events to strengthen community engagement and improve social interaction.
+
+The annual Music Festival features local artists and performers, creating opportunities for talent development and cultural appreciation. Food camps provide free nutritional guidance and healthy meal awareness for families and senior citizens.
+
+The City Marathon promotes fitness, teamwork, and healthy lifestyles among residents of all age groups. Sports meets encourage youth participation and help build leadership and collaboration skills.
+
+Awareness programs focus on environmental protection, waste management, road safety, digital literacy, and public health. These initiatives aim to educate citizens and create a more responsible and informed community.
+
+The city council welcomes volunteers, sponsors, and participants who wish to contribute to future programs and activities. Together we can create a stronger, healthier, and more connected community.
+</div>
+</section>
+
+<section id="events" class="eventCard">
+
+<h2>Upcoming Events</h2>
+
+<h3>Featured Community Programs</h3>
+
+<p>
+Music Festival | Marathon | Food Camp | Awareness Program
+</p>
+
+<h3>Event Categories</h3>
+
+<ul class="eventList">
+<li>Music Festival</li>
+<li>Food Camp</li>
+<li>City Marathon</li>
+<li>Dance Program</li>
+<li>Awareness Program</li>
+<li>Sports Meet</li>
+</ul>
+</section>
+
+<section id="eventInfo" class="eventCard">
+
+<h2>Event Information</h2>
+
+<p id="eventDetails"></p>
+
+<p id="seatCount"></p>
+
+<button id="registerSeatBtn">
+Register for Event
+</button>
+</section>
+
+<section id="gallery" class="eventCard">
+
+<h2>Community Event Gallery</h2>
+
+<table class="eventTable">
+
+<tr>
+<th>Event Image</th>
+<th>Event Name</th>
+<th>Category</th>
+</tr>
+
+<tr>
+<td><img src="images/music.jpg" alt="Music Festival" class="galleryImage"></td>
+<td>Music Festival</td>
+<td>Cultural</td>
+</tr>
+
+<tr>
+<td><img src="images/food.jpg" alt="Food Camp" class="galleryImage"></td>
+<td>Food Camp</td>
+<td>Community Service</td>
+</tr>
+
+<tr>
+<td><img src="images/marathon.jpg" alt="City Marathon" class="galleryImage"></td>
+<td>City Marathon</td>
+<td>Sports</td>
+</tr>
+
+<tr>
+<td><img src="images/dance.jpg" alt="Dance Program" class="galleryImage"></td>
+<td>Dance Program</td>
+<td>Cultural</td>
+</tr>
+
+<tr>
+<td><img src="images/awareness.jpg" alt="Awareness Program" class="galleryImage"></td>
+<td>Awareness Program</td>
+<td>Education</td>
+</tr>
+
+<tr>
+<td><img src="images/sports.jpg" alt="Sports Meet" class="galleryImage"></td>
+<td>Sports Meet</td>
+<td>Sports</td>
+</tr>
+</table>
+</section>
+
+<section id="register" class="eventCard">
+
+<h2>Event Registration Form</h2>
+
+<form>
+
+<input type="text" class="formField" placeholder="Enter your full name">
+
+<input type="email" class="formField" placeholder="Enter your email address">
+
+<select class="formField">
+<option>Select Event Type</option>
+<option>Music Festival</option>
+<option>Food Camp</option>
+<option>City Marathon</option>
+<option>Dance Program</option>
+<option>Awareness Program</option>
+<option>Sports Meet</option>
+</select>
+
+<textarea class="formField" rows="5" placeholder="Enter feedback"></textarea>
+
+<button type="submit">Register Now</button>
+</form>
+</section>
+
+<section id="video" class="eventCard">
+
+<h2>Community Event Promo Video</h2>
+
+<video controls>
+<source src="videos/event.mp4" type="video/mp4">
+</video>
+</section>
+
+<section id="preferences" class="eventCard">
+
+<h2>User Preferences</h2>
+
+<label>Select Preferred Event:</label>
+
+<select>
+<option>Music Festival</option>
+<option>Food Camp</option>
+<option>City Marathon</option>
+<option>Dance Program</option>
+<option>Awareness Program</option>
+<option>Sports Meet</option>
+</select>
+
+<button type="button">Save Preference</button>
+<button type="button">Clear Preferences</button>
+</section>
+
+<section id="location" class="eventCard">
+
+<h2>Find Nearby Events</h2>
+
+<button type="button" onclick="findLocation()">
+Find Nearby Events
+</button>
+
+<p id="locationResult"></p>
+</section>
+
+<section id="contact" class="eventCard">
+
+<h2>Contact Us</h2>
+
+<p>Email: support@cityportal.com</p>
+
+<p>Phone: +91 9876543210</p>
+</section>
+</main>
+
+<footer>
+
+<p>© 2026 Local City Council</p>
+<script>
+
+function findLocation(){
+
+if(navigator.geolocation){
+
+navigator.geolocation.getCurrentPosition(
+showPosition,
+showError,
+{
+enableHighAccuracy:true,
+timeout:5000,
+maximumAge:0
+}
+);
+
+}
+else{
+document.getElementById("locationResult").innerHTML="Geolocation not supported";
+}
+
+}
+
+function showPosition(position){
+
+document.getElementById("locationResult").innerHTML=
+"Latitude: "+position.coords.latitude+
+"<br>Longitude: "+position.coords.longitude+
+"<br>Nearby community events available in your city.";
+
+}
+
+function showError(error){
+
+switch(error.code){
+
+case error.PERMISSION_DENIED:
+document.getElementById("locationResult").innerHTML="Location access denied";
+break;
+
+case error.POSITION_UNAVAILABLE:
+document.getElementById("locationResult").innerHTML="Location unavailable";
+break;
+
+case error.TIMEOUT:
+document.getElementById("locationResult").innerHTML="Request timeout";
+break;
+
+default:
+document.getElementById("locationResult").innerHTML="Unknown error";
+break;
+
+}
+
+}
+</script>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
