@@ -1,0 +1,47 @@
+body{
+background:linear-gradient(to right,lightblue,lightpink);
+font-family:Verdana;
+min-height:100vh;
+}
+
+.pricing-card{
+border:none;
+border-radius:20px;
+box-shadow:5px 5px 20px gray;
+transition:0.3s;
+overflow:hidden;
+padding:20px;
+}
+
+.pricing-card:hover{
+transform:translateY(-10px);
+}
+
+.premium-card{
+border:4px solid gold;
+}
+
+.pricing-icon{
+font-size:60px;
+}
+
+.price{
+font-size:40px;
+font-weight:bold;
+margin-top:15px;
+}
+
+.list-group-item{
+font-size:18px;
+padding:15px;
+}
+
+.btn{
+border-radius:10px;
+font-size:18px;
+padding:10px 20px;
+}
+
+h1{
+font-weight:bold;
+}

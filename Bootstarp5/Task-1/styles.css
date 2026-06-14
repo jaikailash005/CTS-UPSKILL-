@@ -1,0 +1,16 @@
+body{
+background:linear-gradient(to right,lightgreen,lightblue);
+font-family:Verdana;
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.main-box{
+background:white;
+padding:50px;
+border-radius:20px;
+box-shadow:5px 5px 20px gray;
+text-align:center;
+}

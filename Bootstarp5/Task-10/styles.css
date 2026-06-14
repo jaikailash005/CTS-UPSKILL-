@@ -1,0 +1,39 @@
+body{
+background:linear-gradient(to right,lightgreen,lightblue);
+font-family:Verdana;
+min-height:100vh;
+}
+
+.main-box{
+background:white;
+padding:60px;
+border-radius:20px;
+box-shadow:5px 5px 20px gray;
+max-width:700px;
+margin:auto;
+}
+
+.offcanvas{
+background:lightyellow;
+}
+
+.list-group-item{
+font-size:20px;
+font-weight:bold;
+padding:15px;
+transition:0.3s;
+cursor:pointer;
+}
+
+.list-group-item:hover{
+background:orange;
+color:white;
+}
+
+.navbar{
+box-shadow:3px 3px 10px gray;
+}
+
+.btn{
+border-radius:10px;
+}

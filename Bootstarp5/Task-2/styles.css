@@ -1,0 +1,22 @@
+body{
+background:linear-gradient(to right,lightblue,lightgreen);
+font-family:Verdana;
+min-height:100vh;
+}
+
+.custom-card{
+border:none;
+border-radius:20px;
+box-shadow:5px 5px 20px gray;
+transition:0.3s;
+padding:20px;
+background:white;
+}
+
+.custom-card:hover{
+transform:scale(1.05);
+}
+
+h1{
+font-weight:bold;
+}

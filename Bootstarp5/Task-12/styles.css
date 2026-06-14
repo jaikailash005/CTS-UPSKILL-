@@ -1,0 +1,40 @@
+body{
+background:linear-gradient(to right,lightgreen,lightblue);
+font-family:Verdana;
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.main-box{
+background:white;
+padding:60px;
+border-radius:20px;
+box-shadow:5px 5px 20px gray;
+max-width:800px;
+margin:auto;
+}
+
+.progress{
+height:35px;
+border-radius:20px;
+overflow:hidden;
+}
+
+.progress-bar{
+font-size:18px;
+font-weight:bold;
+}
+
+.spinner-border,
+.spinner-grow{
+width:4rem;
+height:4rem;
+}
+
+.btn{
+border-radius:10px;
+font-size:20px;
+padding:12px 25px;
+}

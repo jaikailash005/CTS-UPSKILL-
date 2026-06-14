@@ -1,0 +1,47 @@
+body{
+background:linear-gradient(to right,lightblue,lightpink);
+font-family:Verdana;
+min-height:100vh;
+}
+
+.custom-card{
+border:none;
+border-radius:20px;
+overflow:hidden;
+box-shadow:5px 5px 20px gray;
+transition:0.3s;
+}
+
+.custom-card:hover{
+transform:translateY(-10px);
+}
+
+.card-image{
+height:250px;
+object-fit:cover;
+}
+
+.card-body{
+padding:25px;
+}
+
+.card-title{
+font-weight:bold;
+margin-bottom:15px;
+}
+
+.card-text{
+font-size:18px;
+color:darkgreen;
+margin-bottom:20px;
+}
+
+.btn{
+border-radius:10px;
+font-size:18px;
+padding:10px 20px;
+}
+
+h1{
+font-weight:bold;
+}

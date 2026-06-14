@@ -1,0 +1,30 @@
+body{
+background:linear-gradient(to right,lightpink,lightblue);
+font-family:Verdana;
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.main-box{
+background:white;
+padding:50px;
+border-radius:20px;
+box-shadow:5px 5px 20px gray;
+width:800px;
+}
+
+.accordion-button{
+font-size:20px;
+font-weight:bold;
+}
+
+.accordion-body{
+font-size:18px;
+color:darkgreen;
+}
+
+h1{
+font-weight:bold;
+}
